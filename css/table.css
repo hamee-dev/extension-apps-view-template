@@ -1,0 +1,118 @@
+#table {
+    width: 100%;
+}
+
+#table th {
+    background-color: #6778A0;
+    color: #ffffff;
+}
+
+#table th, .setting-name {
+    padding: 10px;
+}
+
+.inline div, .inline span{
+    display: table-cell;
+}
+
+.setting-detail-name div {
+    border: 1px solid #000000;
+    background-color: #ffffff;
+    min-width: 120px;
+    padding: 5px 10px 5px 10px;
+    text-align: center;
+}
+
+.setting-detail-name span {
+    padding: 0 10px 0 10px;
+}
+
+.update-value .setting-detail-icon {
+    vertical-align: top;
+    display: block;
+}
+
+.update-value-calc .font_bold{
+    padding-left: 10px;
+}
+
+.setting-detail-icon {
+    width: 120px;
+}
+
+#setting-option {
+    margin: 0 auto;
+    padding: 40px 50px 50px 40px;
+}
+
+#setting-option-list {
+    text-align: left;
+}
+
+#setting-option-button{
+    border: 1px solid #e6e6e6;
+    font-size: 120%;
+    padding: 10px;
+    color: #0099ff;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#setting-option-list {
+    border-right: 1px solid #e6e6e6;
+    border-left: 1px solid #e6e6e6;
+    border-bottom: 1px solid #e6e6e6;
+    padding-top: 20px;
+    background-color: #fcfcfc;
+    list-style:none;
+}
+
+#setting-option-list li {
+    margin-bottom: 20px;
+}
+
+#setting-option-button .glyphicon {
+    margin: 0 5px 0 5px;
+}
+
+#setting-option-list input {
+    margin-right: 5px;
+}
+
+#setting-option-list .glyphicon-question-sign {
+    margin-left: 5px;
+}
+
+.excluded_reason {
+    color: white;
+    font-size: 14px;
+    text-align: center;
+    padding-top: 40px;
+}
+
+#column-list .system_exclude, #column-list .user_exclude, #column-list .system_exclude .font_bold {
+    background-color: #8a8a8a;
+}
+
+#column-list .system_exclude .tag-list span, #column-list .user_exclude .tag-list span {
+    background-color: #8a8a8a;
+}
+
+#column-list .system_exclude td.each_column_after_value, #column-list .user_exclude td.each_column_after_value {
+    color: #8a0000;
+}
+
+#column-list .system_exclude .setting-detail-icon, #column-list .user_exclude .setting-detail-icon {
+    color: #8a8a8a;
+    background-color: #292929;
+}
+
+#column-list .excluded_reason {
+    color: white;
+    font-size: 14px;
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    border-style: none;
+}

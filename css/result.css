@@ -1,0 +1,9 @@
+#message_title {
+    font-weight: bold;
+    margin-top: 0px;
+    text-align: center;
+}
+
+.message_contents {
+    text-align: center;
+}

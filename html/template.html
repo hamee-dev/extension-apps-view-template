@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ページタイトル</title>
+
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+</head>
+<body>
+    <div id="container">
+        <!-- ヘッダー(必要に応じて部分テンプレート化)-->
+        <div id="header">
+            <div id="app-icon"><img src="../img/sample.png" alt="サンプル画像"></div>
+            <div id="page-title"><h1>ページタイトル</h1></div>
+            <div id="page-description"><p>ページの説明</p></div>
+        </div>
+        <div id="content">
+            <div class='each_contents'>コンテンツ</div>
+
+            <div class='each_contents'>
+                <a href="javascript:void(0);" data-toggle="tooltip" data-placement="right" data-original-title="ツールチップで表示する中身"><span class="glyphicon glyphicon-question-sign"></span>ツールチップサンプル</a>
+            </div>
+
+            <div class='each_contents'>
+                <label>maxlengthサンプル</label>
+                <input type="text" class="form-control text-box maxlength" maxlength="100" data-maxlength=true>
+            </div>
+
+            <div class='each_contents'>
+                <label>datepickerサンプル</label>
+                <input type="text" class="form-control text calendar-select">
+            </div>
+
+            <div class='each_contents'>
+                <label>モーダルサンプル</label><br>
+                <a href="javascript:void(0);" class="btn btn-nextengine" id='modal1'>
+                    <span class="glyphicon glyphicon-floppy-disk icon"></span>モーダル1
+                </a>
+                <a href="javascript:void(0);" class="btn btn-nextengine-white" id='modal2'>
+                    <span class="glyphicon glyphicon-floppy-disk icon"></span>モーダル2
+                </a>
+                <a href="javascript:void(0);" class="btn btn-other" id='modal3'>
+                    <span class="glyphicon glyphicon-floppy-disk icon"></span>モーダル3
+                </a>
+            </div>
+
+            <div class='each_contents'>
+                <label>ボタンサンプル</label><br>
+                <a href="javascript:void(0);" class="btn btn-nextengine">
+                    <span class="glyphicon glyphicon-file icon"></span>新規作成
+                </a>
+                <a href="javascript:void(0);" class="btn btn-nextengine">
+                    <span class="glyphicon glyphicon-edit icon"></span>編集
+                </a>
+                <a href="javascript:void(0);" class="btn btn-success">
+                    <span class="glyphicon glyphicon glyphicon-play icon"></span>実行
+                </a>
+                <a href="javascript:void(0);" class="btn btn-danger">
+                    <span class="glyphicon glyphicon-trash icon"></span>削除
+                </a>
+                <a href="javascript:void(0);" class="btn btn-back">
+                    <span class="glyphicon glyphicon-arrow-left icon"></span>戻る
+                </a>
+            </div>
+        </div>
+        <!-- ボタンクリック時に画面全体を覆って他のボタンをクリックさせないようにするためのビュー -->
+        <div id="display-block-view"></div>
+    </div>
+
+    <!-- フッター(必要に応じて部分テンプレート化) -->
+    <div id="footer">
+        <div id="footer-inner">
+            <a href="template-error.html" class="btn btn-danger">
+                <span class="glyphicon glyphicon-arrow-left icon"></span>エラー画面
+            </a>
+            <a href="template-table.html" class="btn btn-nextengine pull-right">
+                <span class="glyphicon glyphicon-arrow-right icon"></span>テーブルサンプル
+            </a>
+        </div>
+    </div>
+
+    <!-- モーダル(必要に応じて部分テンプレート化) -->
+    <!-- アラート（メッセージのみのモーダル） -->
+    <div class="modal" id="alert-modal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="modal-body-description"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-cancel" data-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- タイトルとメッセージのみの簡単なモーダル -->
+    <div class="modal" id="basic-modal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form class="add-params" action="" method="post">
+                    <div class="modal-header no-border-modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span>×</span></button>
+                        <h3 class="modal-title text-center font_bold"></h3>
+                    </div>
+                    <div class="modal-body">
+                        <div class="modal-body-description"></div>
+                    </div>
+                    <div class="modal-footer no-border-modal-footer">
+                        <button type="button" class="btn btn-cancel" data-dismiss="modal">キャンセル</button>
+                        <button type="submit" class="btn btn-danger done_button"></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- テキストボックス付きモーダル -->
+    <div class="modal" id="text-box-modal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form class="add-params" action="" method="post">
+                    <div class="modal-header no-border-modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span>×</span></button>
+                        <h3 class="modal-title text-center font_bold"></h3>
+                    </div>
+                    <div class="modal-body">
+                        <div class="alert alert-danger" role="alert"></div>
+                        <div class="modal-body-description text-center"></div>
+                        <div class="form-group">
+                            <p class="modal-body-label"></p>
+                            <input type="text" class="form-control text-box maxlength" name="modal_text" maxlength="">
+                        </div>
+                    </div>
+                    <div class="modal-footer no-border-modal-footer">
+                        <button type="button" class="btn btn-cancel" data-dismiss="modal">キャンセル</button>
+                        <button type="submit" class="btn btn-nextengine done_button"></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap-maxlength.js"></script>
+    <script type="text/javascript" src="../js/bootstrap-datepicker.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap-datepicker.ja.min.js"></script>
+    <script type="text/javascript" src="../js/common.js"></script>
+</body>
+</html>

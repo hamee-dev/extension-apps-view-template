@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>テーブルサンプル</title>
+
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../css/table.css">
+</head>
+<body>
+    <div id="container">
+        <div id="message">
+            <!-- メッセージがある場合のみ表示 -->
+            <div class="alert alert-success" role="alert">
+                <!-- メッセージが複数ある場合はループで回す -->
+                <div>成功メッセージ</div>
+            </div>
+            <div class="alert alert-danger" role="alert">
+                <!-- メッセージが複数ある場合はループで回す -->
+                <div>失敗メッセージ</div>
+            </div>
+        </div>
+
+        <!-- ヘッダー(必要に応じて部分テンプレート化)-->
+        <div id="header">
+            <div id="app-icon"><img src="../img/sample.png" alt="サンプル画像"></div>
+            <div id="page-title"><h1>テーブルサンプル</h1></div>
+            <div id="page-description"><p>テーブルのサンプルです</p></div>
+        </div>
+
+        <div id="column-list">
+            <table id="table" class='table table-bordered'>
+                <thead>
+                    <tr>
+                        <th>伝票番号</th>
+                        <th>設定値</th>
+                        <th>適用後</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>
+                            <div class="inline">
+                                <div class="setting-detail-name">
+                                    <div class="font_bold">項目1</div>
+                                    <span class="glyphicon glyphicon-arrow-right"></span>
+                                </div>
+
+                                <div class="update-value-calc">
+                                    <div class="setting-detail-icon orange-area">次の値で上書き</div>
+                                    <div class="font_bold">上書き値</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td><div class="font_bold">上書き値</div></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>
+                            <div class="inline">
+                                <div class="setting-detail-name">
+                                    <div class="font_bold">項目2</div>
+                                    <span class="glyphicon glyphicon-arrow-right"></span>
+                                </div>
+                                <div class="setting-detail-icon black-area">空欄にする</div>
+                            </div>
+                        </td>
+                        <td><div class="setting-detail-icon black-area">空欄にする</div></td>
+                    </tr>
+                    <tr class='system_exclude'>
+                        <td>3</td>
+                        <td>
+                            <div class="inline">
+                                <div class="setting-detail-name">
+                                    <div class="font_bold">項目3</div>
+                                    <span class="glyphicon glyphicon-arrow-right"></span>
+                                </div>
+                                <div class="setting-detail-icon black-area">空欄にする</div>
+                            </div>
+                        </td>
+                        <td><div class="setting-detail-icon black-area">空欄にする</div></td>
+                        <td class="excluded_reason">不正なデータなので対象外</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="text-center">
+              <div id="setting-option">
+                <div id="setting-option-button" data-toggle="collapse" data-target="#setting-option-list" class="collapsed">
+                  <span class="glyphicon glyphicon-wrench icon"></span>設定オプション<span class="glyphicon glyphicon-chevron-down"></span>
+                </div>
+                <ul id="setting-option-list" class="collapse" style="height: 21px;">
+                  <li>
+                    <label>
+                      <input name="option1" value="0" type="hidden">
+                      <input name="option1" value="1" type="checkbox">オプション1
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input name="option2" value="0" type="hidden">
+                      <input name="option2" value="1" type="checkbox">オプション2
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input name="option3" value="0" type="hidden">
+                      <input name="option3" value="1" type="checkbox">オプション3
+                    </label>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+        </div>
+
+        <!-- ボタンクリック時に画面全体を覆って他のボタンをクリックさせないようにするためのビュー -->
+        <div id="display-block-view"></div>
+    </div>
+
+    <!-- フッター(必要に応じて部分テンプレート化) -->
+    <div id="footer">
+        <div id="footer-inner">
+            <a href="template.html" class="btn btn-back add-params">
+                <span class="glyphicon glyphicon-arrow-left icon"></span>戻る
+            </a>
+            <a href="template-result.html" class="btn btn-success pull-right">
+                <span class="glyphicon glyphicon glyphicon-play icon"></span>実行
+            </a>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+</body>
+</html>
